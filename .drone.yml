@@ -1,0 +1,26 @@
+debug: true
+
+build:
+  image: ipedrazas/md2slides:latest
+  commands:
+    - md2slides -o dist/
+
+publish:
+  docker:
+    registry: quay.io
+    environment:
+      - DOCKER_LAUNCH_DEBUG=true
+    username: $$QUAY_USER
+    password: $$QUAY_PASSWORD
+    email: $$QUAY_EMAIL
+    repo: quay.io/ipedrazas/k8swrkshp-slides
+    storage_driver: vfs
+    tag:
+      - latest
+      - "$$BUILD_NUMBER"
+    when:
+      branch: master
+
+    branch: master
+
+
