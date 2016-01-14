@@ -1,9 +1,10 @@
-FROM alpine:3.2
+FROM alpine:3.3
 
 MAINTAINER Ivan Pedrazas <ipedrazas@gmail.com>
 
 RUN apk add --update \
-      curl 
+      curl \
+      bash
 
 CMD ["/bin/sh"]
 
