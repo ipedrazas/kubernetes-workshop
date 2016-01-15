@@ -1,0 +1,39 @@
+{
+  "apiVersion": "extensions/v1beta1",
+  "kind": "Job",
+  "metadata": {
+    "name": "healthchecker-002",
+    "labels": {
+      "name": "healthchecker-0002",
+      "deep": "healthchecker"
+    }
+  },
+  "spec": {
+    "template": {
+      "metadata": {
+        "name": "healthchecker",
+        "labels": {
+          "name": "healthchecker-0002",
+          "deep": "healthchecker"
+        }
+      },
+      "spec": {
+        "restartPolicy": "Never",
+        "containers": [
+          {
+            "name": "healthchecker",
+            "image": "ipedrazas/jobhealthcheck:latest",
+            "env": [
+                {
+                  "name": "APIHOST",
+                  "value": "https://www.shuttlecloud.com"
+                }
+           ]
+         }
+        ]
+      }
+    }
+  }
+}
+
+
