@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: pingredis
+  labels:
+    name: pingredis
+spec:
+  replicas: 1
+  selector:
+    name: pingredis
+  template:
+    metadata:
+      labels:
+        name: pingredis
+    spec:
+      containers:
+      - name: pingredis
+        image: ipedrazas/pingredis
+        ports:
+        - containerPort: 8080
+        env:
+          - name: REDIS_HOST
+            value: "redis"
