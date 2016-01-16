@@ -1,0 +1,14 @@
+# Pod definition
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pingpod
+  labels:
+    name: pingpodlabel
+
+spec:
+  containers:
+  - name: pingcontainer
+    image: ipedrazas/ping
+    ports:
+    - containerPort: 8080

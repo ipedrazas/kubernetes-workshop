@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: pingrcworkshop
+  labels:
+    name: pingrc
+spec:
+  replicas: 1
+  selector:
+    name: pingrcworkshop
+  template:
+    metadata:
+      labels:
+        name: pingrcworkshop
+    spec:
+      containers:
+      - name: pingrcworkshop
+        image: ipedrazas/ping:workshop
+        ports:
+        - containerPort: 8080
