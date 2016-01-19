@@ -46,8 +46,8 @@ Delete one of them to see how a new one is created
 Rolling Update
 
     kubectl create -f ping/k8s/ping-rc.yaml
-    kubectl scale --replicas=3 rc pingrcname
-    kubectl rolling-update pingrcname --update-period=10s -f ping/k8s/ping-rc-workshop.yaml
+    kubectl scale rc ping-update-initial --replicas=4
+    kubectl rolling-update ping-update-initial --update-period=10s -f ping-rc-workshop.yaml
 
 
 Debugging
