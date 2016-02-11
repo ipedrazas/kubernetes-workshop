@@ -65,3 +65,10 @@ Or you can do port forwarding between your host and your container
     kubectl port-forward -p redis-XXXXX 6380:6379
 
 
+Checking how the DNS works:
+
+    kubectl exec busybox -- nslookup kubernetes
+    kubectl exec busybox -- nslookup kubernetes.default
+    kubectl exec busybox -- nslookup kubernetes.default.svc.cluster.local
+
+
