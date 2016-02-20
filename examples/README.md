@@ -11,6 +11,10 @@ This repo contains a few examples of code, containers and kubernetes artifacts t
 
 ## Useful Commands
 
+Get kubectl version
+
+    kubectl version
+
 Get cluster info:
 
     kubectl cluster-info
@@ -71,4 +75,9 @@ Checking how the DNS works:
     kubectl exec busybox -- nslookup kubernetes.default
     kubectl exec busybox -- nslookup kubernetes.default.svc.cluster.local
 
+Running pods directly using kubectl
 
+    # start the pod running nginx
+    kubectl run --image=nginx nginx-app --port=80 --env="DOMAIN=cluster"
+    # expose a port through with a service
+    kubectl expose rc nginx-app --port=80 --name=nginx-http
