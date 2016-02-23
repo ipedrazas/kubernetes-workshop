@@ -23,6 +23,10 @@ Get pods
 
     kubectl get pods
 
+Get all pods from all namespaces
+
+    kubectl get pods --all-namespaces
+    
 Get pods by label
 
     kubectl get pods -l env=production
