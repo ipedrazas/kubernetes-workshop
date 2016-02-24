@@ -70,7 +70,7 @@ There are ways of interacting directly with your containers. For example, you ca
 
 Or you can do port forwarding between your host and your container
 
-    kubectl port-forward -p redis-XXXXX 6380:6379
+    kubectl port-forward redis-XXXXX 6380:6379
 
 
 Checking how the DNS works:
