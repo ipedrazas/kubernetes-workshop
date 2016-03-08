@@ -1,14 +1,6 @@
 # Examples
 
 
-This repo contains a few examples of code, containers and kubernetes artifacts to help to understand the concepts behind kubernetes.
-
-* [Ping](ping): a simple http endpoint. You can see the difference of names, labels and selectors, and how they work.
-* [PingPodRedis](pingpodredis): a simple http endpoint that reads & writes to a Redis database. Both containers are in a Pod. State is not maintained.
-* [Ping-redis](ping-redis):  a simple http endpoint that reads & writes to a Redis database. It runs on different Pods using an internal service. State is not maintained either.
-*
-
-
 ## Useful Commands
 
 Get kubectl version
@@ -26,7 +18,7 @@ Get pods
 Get all pods from all namespaces
 
     kubectl get pods --all-namespaces
-    
+
 Get pods by label
 
     kubectl get pods -l env=production
