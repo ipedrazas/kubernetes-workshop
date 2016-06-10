@@ -4,7 +4,8 @@ MAINTAINER Ivan Pedrazas <ipedrazas@gmail.com>
 
 RUN apk add --update \
       curl \
-      bash
+      bash \
+      jq
 
 CMD ["/bin/sh"]
 
