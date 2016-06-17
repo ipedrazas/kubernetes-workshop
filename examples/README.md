@@ -77,8 +77,13 @@ Running pods directly using kubectl
     kubectl run --image=nginx nginx-app --port=80 --env="DOMAIN=cluster"
     # expose a port through with a service
     kubectl expose rc nginx-app --port=80 --name=nginx-http
-    
+
 Your first cattle
 
     kubectl run nginx --image=nginx:1.9.12 # Thanks Kelsey!
     kubectl expose deployment nginx --port=80 --type=LoadBalancer
+
+
+Create a ConfigMap from a file
+
+    kubectl create configmap nginx-ghost --from-file=configs/ghost.conf --namespace=ghost
