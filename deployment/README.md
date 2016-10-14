@@ -58,3 +58,13 @@ And if we check what's going on we will see that a few pods are being created an
     frontend-2546943484-x00l9   1/1       Running             0          18m
     frontend-2650949117-bpemm   0/1       ContainerCreating   0          2s
     frontend-2650949117-es92l   0/1       ContainerCreating   0          2s
+
+Finally, we will see that the new pods have been updated.
+
+
+What happened here? well, we had 3 pods running that needed to be updated and kubernetes has used our `Deployment`
+file to know what does he have to do and how.
+
+In the Deployment file you specify what are you deploying (containers), how many replicas do you want to be created, and how do you want them to be updated.
+
+Every application is different, but `Deployment` artifacts give you the flexibility to update and scale your application according to your needs.
