@@ -10,6 +10,11 @@ spec:
         app: workshopui
         tier: frontend
     spec:
+      strategy:
+        rollingUpdate:
+          maxSurge: 1
+          maxUnavailable: 1
+        type: RollingUpdate
       containers:
       - name: workshopui
         image: ipedrazas/workshopui:1.0.0
